@@ -3,7 +3,7 @@
 :root {
     --main: #0D3B66;
     --secondary: #FAF0CA;
-    --tertirary: #0D3B66;
+    --tertirary: #F4D35E;
     --text: #09141f;
     --box-shadow: #0f3253;
 }
@@ -25,8 +25,8 @@ nav {
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: row;
-    margin: 20px; 
-    Height: 20px;
+    margin: auto; 
+    Height: auto;
     position: sticky;
 }
 
@@ -54,16 +54,16 @@ nav ul {
 
 nav ul li { 
     padding: 5px;
-    cursor: pointer;
     transition: color 0.3 ease-in-out, font-size 0.3s ease-in-out 0.1s;
 }
 
 nav ul li:hover {
     border: 1.7px solid var(--main);;
     border-radius: 20px;;
-    color: #2a7bc7;
+    color: #2167a8;
     font-weight: bold;
     transition: color 0.3 ease-in-out, font-size 0.3s ease-in-out 0.1s;
+    cursor: pointer;
 }
 
 nav ul li a {
@@ -92,28 +92,26 @@ nav ul li:hover > a {
 }
 
 section {
-    background-color: var(--tertirary);
-    height: 150px;
+    background-color: var(--main);
+    height: 220px;
     position: relative;
 }    
 
 
-#content {
+.content {
     position: relative;
-    left: 50px;
-    top: 35px;
+    top: 50px;
     text-align: center;
     color: white;
     width: auto;
 }
 
-#content h2 {
-    font-size: 54px;
+.content h1 {
+    font-size: 42px;
 }
 
-#content p {
-    font-size: 12px;
-    font-weight: bold;
+.content p {
+    font-size: 16px;
 }
 
 @media only screen and (max-width: 945px) {
@@ -150,9 +148,9 @@ section {
     display: flex;
     align-items: start;
     flex-direction: row;
-    text-align: justify;
-    margin: center;
-    gap: 50px;
+    text-align: center;
+    margin: auto;
+    gap: auto;
 }
 
 .blog {
@@ -167,7 +165,8 @@ section {
     display: flex;
     background-color: whitesmoke;
     box-shadow: var(--box-shadow);
-    margin-bottom: auto;
+    margin: 40px;
+    margin-right: 0%;
     position: relative;
     min-height: auto;
 }
@@ -236,68 +235,69 @@ section {
 }
 
 .sidebar {
-    text-align: ;
-    display: ;
-    flex-direction: ;
-    flex-wrap: ;
-    align-items: ;
-    align-content: ;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    align-content: flex-start;
 }
 
 .popular-posts-side {
-    margin: ;
-    width: ;
+    margin: 20px; ;
+    width: 100%;
 }
 
 .popular-posts-side h2 {
-    font-size: ;
-    color: ;
-    font-weight: ;
-    padding-bottom: ;
-    padding-top: ;
+    font-size: 18px;
+    color: #41698b;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .popular-post {
-    position: ;
-    background-color: ;
-    margin-bottom: ;
-    box-shadow: ;
-    display: ;
-    align-items: ;
-    flex-wrap: ;
-    flex-direction: ;
-    align-content: ;
-    padding: ;
-    gap: ;
-    transition: ;
+    position: relative;
+    background-color: whitesmoke;
+    margin: 20px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: left;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    padding: 15px;
+    gap: 25px;
+    transition: all 0.3s ease;
 }
 
 .popular-post:hover {
-    margin-left: ;
-    margin-right: ;
-    transition: ;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: margin 0.3s ease;
+    cursor: pointer;
 }
 
 .popular-post-image {
-    width: ;
-    height: ;
+    width: 75px;
+    height: 75px;
 }
 
 .popular-post-image img {
-    min-width: ;
-    min-height: ;
-    object-fit: ;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
 }
 
 .popular-post-title {
-    font-size: ;
-    color: ;
-    font-weight: ;
+    font-size: 14px;
+    color: #2a3541;
+    font-weight: bold;
 }
 
 .popular-post-desc {
-    font-size: ;
-    color: ;
+    font-size: 12px;
+    color: #3b444d;
 }
 
 @media only screen and (max-width: 500px) {
