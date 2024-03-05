@@ -139,6 +139,7 @@ section {
     background-color: var(--main);
     height: 220px;
     position: relative;
+    border-radius: 10px;
 }    
 
 
@@ -212,6 +213,7 @@ section {
 .post {
     display: flex;
     background-color: whitesmoke;
+    border-radius: 10px;
     box-shadow: 0 0 1px var(--box-shadow);
     margin: 40px;
     margin-right: 0%;
@@ -309,6 +311,7 @@ section {
 .popular-post {
     position: relative;
     background-color: whitesmoke;
+    border-radius: 5px;
     margin: 20px;
     box-shadow: 0 0 1px var(--box-shadow);
     display: flex;
@@ -373,6 +376,7 @@ section {
     padding: 15px;
     box-shadow: 0 0 1px var(--box-shadow);
     background: whitesmoke;
+    border-radius: 10px;
     width: auto;
     border-radius: 3px;
     gap: 20px;
@@ -419,6 +423,7 @@ section {
 footer {
     background-color: #141f29;
     color: white;
+    border-radius: 10px;
 }
 
 .footerBoxes {
