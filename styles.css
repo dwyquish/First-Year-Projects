@@ -1,13 +1,16 @@
+/* Typography */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+/* Global Styling */
 :root {
     --main: #0D3B66;
     --secondary: #FAF0CA;
-    --tertirary: #F4D35E;
+    --tertiary: whitesmoke;
     --text: #09141f;
     --box-shadow: #0f3253;
 }
 
+/* Reset and Normalize */
 *,
 *::after
 *::before {
@@ -17,22 +20,51 @@
     font-family: 'Lato', sans-serif; 
 }
 
+a {
+    text-decoration: none;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     background-color: rgb(238, 238, 238);
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    overflow-x: hidden;
 }
 
-/* Navigation */
+img, picture {
+    max-width: 100%;
+}
+
+article, aside, footer, header, nav, section {
+	display: block;
+}
+
+/* Navigation ----------------------------------------------------------------------------------------------------------------*/
 
 nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: center; 
     flex-wrap: nowrap;
     flex-direction: row;
     margin: auto; 
     Height: auto;
     position: sticky;
+    top: 0;
 }
 
 nav p {
@@ -54,18 +86,19 @@ nav ul {
     gap: 15px;
     font-size: 14px;
     z-index: 1;
-    list-style-type: none;
 }
 
 nav ul li { 
-    padding: 5px;
-    transition: color 0.3 ease-in-out, font-size 0.3s ease-in-out 0.1s;
+    border: 1.7px solid var(--main);
+    padding: 10px;
+    border-radius: 5px;
+    transition: border-color 0.3 ease-in-out, font-size 0.3s ease-in-out 0.1s;
 }
 
 nav ul li:hover {
-    border: 1.7px solid var(--main);;
-    border-radius: 20px;;
-    color: #2167a8;
+    border: 1.99px solid var(--main);
+    border-radius: 20%;
+    border-color: #144b7e;
     font-weight: bold;
     transition: color 0.3 ease-in-out, font-size 0.3s ease-in-out 0.1s;
     cursor: pointer;
@@ -79,12 +112,16 @@ nav ul li a {
 
 nav ul li:hover > a {
     color: rgb(63, 128, 212);
+    font-weight: bold;
     transition: color 0.3 ease-in-out, font-size 0.3s ease-in-out 0.1s;;
 }
 
 @media only screen and (max-width: 880px) {
     nav {
-        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
     }
 }
 
@@ -92,9 +129,11 @@ nav ul li:hover > a {
     nav ul {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: auto;
     }
 }
+
+/* Slider Section  ----------------------------------------------------------------------------------------------------------------*/
 
 section {
     background-color: var(--main);
@@ -104,11 +143,13 @@ section {
 
 
 .content {
-    position: relative;
-    top: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    width: auto;
+    width: 100%;
 }
 
 .content h1 {
@@ -149,6 +190,8 @@ section {
     }
 }
 
+/* Main Content  ----------------------------------------------------------------------------------------------------------------*/
+
 .main-content {
     display: flex;
     align-items: start;
@@ -169,11 +212,11 @@ section {
 .post {
     display: flex;
     background-color: whitesmoke;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 0 1px var(--box-shadow);
     margin: 40px;
     margin-right: 0%;
     position: relative;
-    min-height: auto;
+    min-height: 200px;
 }
 
 .post-image  {
@@ -225,19 +268,21 @@ section {
 
 @media only screen and (max-width: 992px) {
     .main-content {
-        flex-direction: ;
+        flex-direction: column;
     }
 }
 
 @media only screen and (max-width: 500px) {
     .main-content {
-        margin: 3rem 1rem;
+        margin: auto;
     }
 
     .post {
         flex-direction: column;
     }
 }
+
+/* Siderbar ----------------------------------------------------------------------------------------------------------------*/
 
 .sidebar {
     text-align: left;
@@ -257,22 +302,22 @@ section {
     font-size: 18px;
     color: #41698b;
     font-weight: bold;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-left: 19px;
+
 }
 
 .popular-post {
     position: relative;
     background-color: whitesmoke;
     margin: 20px;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 0 1px var(--box-shadow);
     display: flex;
-    align-items: left;
+    align-items: center;
     flex-wrap: nowrap;
     flex-direction: row;
     align-content: center;
     padding: 15px;
-    gap: 25px;
+    gap: 10px;
     transition: all 0.3s ease;
 }
 
@@ -307,13 +352,15 @@ section {
 
 @media only screen and (max-width: 500px) {
     .popular-posts-side {
-        margin: ;
+        margin: auto;
     }
 
     .sidebar {
-        flex-direction: ;
+        flex-direction: column;
     }
 }
+
+/* Social Side ----------------------------------------------------------------------------------------------------------------*/
 
 .social-side {
     margin: 40px;
@@ -324,7 +371,7 @@ section {
 .social-side div {
     display: flex;
     padding: 15px;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 0 1px var(--box-shadow);
     background: whitesmoke;
     width: auto;
     border-radius: 3px;
@@ -352,20 +399,22 @@ section {
 }
 
 .social-side a:hover img {
-    border-radius: 25%;
-    filter: blur(2px);
+    border-radius: 5%;
+    filter: blur(1px);
     transition: all 0.3s ease;
 }
 
 @media only screen and (max-width: 992px) {
     .sidebar {
-          flex-direction: ;
+          flex-direction: column;
       }
   
       .popular-posts-side {
-          flex: ;
+          flex: auto;
       }
   }
+
+/* Footer ----------------------------------------------------------------------------------------------------------------*/  
 
 footer {
     background-color: #141f29;
@@ -393,14 +442,14 @@ footer {
 }
 
 @media only screen and (max-width: 1000px) {
-    .container footer .footerBoxes {
-        padding: ;
+    .footer .footerBoxes {
+        padding: 5px;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .container footer .footerBoxes {
-        flex-direction: ;
+    .footer .footerBoxes {
+        flex-direction: column;
     }
 }
 
